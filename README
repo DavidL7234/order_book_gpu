@@ -12,24 +12,24 @@ Order Book GPU is a high-performance Python library designed for managing and an
 ## Installation
 Order Book GPU can be installed using pip.
 
-```
+````python
 git clone https://github.com/yourusername/order-book-gpu.git
 cd order-book-gpu
 pip install .
-```
+````
 
 ## To Run
 
-```
+````python
 from order_book import OrderBookClientGPU
 symbols = ["BTCUSDT", "ETHUSDT"]
 orderbook_client = OrderBookClientGPU(symbols, custom_stat_fn=None, path='.')
 orderbook_client.start()
-```
+````
 
 ## Opening and Reading Order Books: Refer to tests/eval_GPU.py
 
-```
+````python
 from order_book import OrderBookTorch
 import json
 
@@ -52,4 +52,4 @@ with open(filename.split('.')[0]+'.json', 'ab') as file2:
     file2.write(json.dumps(saved_data).encode('utf-8'))
 
 print(order_book.frames.keys())
-```
+````
