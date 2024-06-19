@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: order-book-gpu
+Version: 0.1.0
+Summary: A package for managing order book data with GPU acceleration
+Requires-Python: >=3.6
+Requires-Dist: numpy
+Requires-Dist: requests
+Requires-Dist: websocket-client
+Requires-Dist: torch
