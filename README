@@ -16,7 +16,7 @@ Order Book GPU can be installed using pip.
 git clone https://github.com/yourusername/order-book-gpu.git
 cd order-book-gpu
 pip install .
-``` 
+```
 
 ## To Run
 
@@ -25,7 +25,7 @@ from order_book import OrderBookClientGPU
 symbols = ["BTCUSDT", "ETHUSDT"]
 orderbook_client = OrderBookClientGPU(symbols, custom_stat_fn=None, path='.')
 orderbook_client.start()
-``` 
+```
 
 ## Opening and Reading Order Books: Refer to tests/eval_GPU.py
 
@@ -34,7 +34,7 @@ from order_book import OrderBookTorch
 import json
 
 
-### just to convert an order book to JSON for evaluation
+# just to convert an order book to JSON for evaluation
 s = "ETHUSDT"
 filename = f"{s}_order_book.bin"
 
@@ -52,4 +52,4 @@ with open(filename.split('.')[0]+'.json', 'ab') as file2:
     file2.write(json.dumps(saved_data).encode('utf-8'))
 
 print(order_book.frames.keys())
-``` 
+```
