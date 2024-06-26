@@ -9,6 +9,29 @@ Order Book GPU is a high-performance Python library designed for managing and an
 - Customizable statistics and metrics computation
 - Support for multiple financial instruments
 
+## Features
+Evaluation: refer to order_book_gpu/tests/
+
+Extract data from order_book_gpu/tests/compressed.zip
+
+### Markowitz
+eval_markowitz.py
+
+The following packages are required:
+````python
+python -m pip install scipy
+python -m pip install PyPortfolioOpt
+````
+
+### Single-Period Optimization (SPO) and Multi-Period Optimization (MPO)
+eval_cvx.py
+eval_multi_cvx.py
+
+The following packages is required:
+````python
+python -m pip install cvxportfolio
+````
+
 ## Installation
 Order Book GPU can be installed using pip.
 
