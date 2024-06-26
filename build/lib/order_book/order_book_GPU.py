@@ -61,11 +61,12 @@ class OrderBookTorch:
             self.frames[update_id] = {
                 'bids': bids[:, :2],  
                 'asks': asks[:, :2],
+                'time': 0,#snapshot["E"],
                 'stats': self.compute_statistics(bids, asks)
             }
         print(time.time() - start)
 
-    def add_update(self, update_id, prev_id, bids, asks):
+    def add_update(self, update_id, prev_id, bids, asks, event_time):
         """
         Processes an update to the order book.
 
@@ -90,6 +91,7 @@ class OrderBookTorch:
             self.frames[update_id] = {
                 'bids': updated_bids,
                 'asks': updated_asks,
+                'time': event_time,
                 'stats': self.compute_statistics(updated_bids, updated_asks)
             }
             #print(time.time() - start)
@@ -216,6 +218,7 @@ class OrderBookTorch:
         saved_data = {update_id: {
             'bids': frame['bids'].cpu().numpy(),
             'asks': frame['asks'].cpu().numpy(),
+            'time': frame['time'],
             'stats': frame['stats']
         } for update_id, frame in self.frames.items()}
         return pickle.dumps(saved_data)
@@ -236,6 +239,7 @@ class OrderBookTorch:
         new_order_book.frames = {update_id: {
             'bids': torch.tensor(frame['bids'], device=new_order_book.device),
             'asks': torch.tensor(frame['asks'], device=new_order_book.device),
+            'time': frame['time'],
             'stats': frame['stats']
         } for update_id, frame in loaded_data.items()}
         return new_order_book

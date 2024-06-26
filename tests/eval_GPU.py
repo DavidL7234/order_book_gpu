@@ -1,4 +1,4 @@
-from order_book.order_book_GPU import OrderBookTorch
+from order_book import OrderBookTorch
 import json
 
 

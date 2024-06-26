@@ -1,3 +1,4 @@
+README.md
 setup.py
 order_book/__init__.py
 order_book/order_book_GPU.py

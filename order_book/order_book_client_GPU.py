@@ -143,7 +143,7 @@ class OrderBookClientGPU:
                 if snapshot_update_id:
                     order_book.add_snapshot(data, snapshot_update_id)
                 else:
-                    order_book.add_update(data["u"], prev_id, data["b"], data["a"])
+                    order_book.add_update(data["u"], prev_id, data["b"], data["a"], data["E"])
                     #if symbol =='ETHUSDT':
                     #    print(data["u"])
                             #serialize and write after each update
@@ -217,7 +217,7 @@ def spread2(bids, asks): ##just a sample custom function
     return 'spread2', (best_ask_price - best_bid_price).item()
 
 def main():
-    symbols = ["BTCUSDT", "ETHUSDT", "LTCUSDT", "BNBUSDT", "BNTUSDT"]
+    symbols = ["BTCUSDT", "ETHUSDT", "LTCUSDT", "BNBUSDT", "SOLUSDT"]
     orderbook_client = OrderBookClientGPU(symbols, custom_stat_fn=spread2)
     orderbook_client.start()
 

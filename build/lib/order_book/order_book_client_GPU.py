@@ -143,7 +143,7 @@ class OrderBookClientGPU:
                 if snapshot_update_id:
                     order_book.add_snapshot(data, snapshot_update_id)
                 else:
-                    order_book.add_update(data["u"], prev_id, data["b"], data["a"])
+                    order_book.add_update(data["u"], prev_id, data["b"], data["a"], data["E"])
                     #if symbol =='ETHUSDT':
                     #    print(data["u"])
                             #serialize and write after each update
