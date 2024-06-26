@@ -9,8 +9,8 @@ Order Book GPU is a high-performance Python library designed for managing and an
 - Customizable statistics and metrics computation
 - Support for multiple financial instruments
 
-## Features
-Evaluation: refer to order_book_gpu/tests/
+## Evaluation
+Refer to order_book_gpu/tests/
 
 Extract data from order_book_gpu/tests/compressed.zip
 
